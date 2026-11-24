@@ -1,12 +1,20 @@
 1
-biryani
-pakistani
-300
+Chicken Biryani
+Pakistani
+350
 2
-burger
-fast food
-500
+Beef Burger
+Fast Food
+550
 3
-Sandwich
-fast food
-250
+Chicken Sandwich
+Fast Food
+300
+4
+Chicken Karahi
+Pakistani
+800
+5
+Fries
+Fast Food
+200

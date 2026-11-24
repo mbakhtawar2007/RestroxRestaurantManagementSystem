@@ -1,8 +1,16 @@
 1
-kaif
-chef
-40000
+Muhammad Bakhtawar
+IT Manager
+100000
 2
-raza
-staff
-30000
+Muhammad Kaif
+General Manager
+100000
+3
+Fizah
+Head Chef
+70000
+4
+Raza Ahmed
+Head Chef
+70000

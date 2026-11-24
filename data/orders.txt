@@ -1,12 +1,20 @@
 1
-1003
+1001
 2
-1100
+1250
 1
-biryani
+Chicken Biryani
+2
+350
+2
+Beef Burger
+1
+550
+2
+1002
+1
+600
+3
+Chicken Sandwich
 2
 300
-2
-burger
-1
-500

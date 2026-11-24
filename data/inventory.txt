@@ -1,4 +1,20 @@
 1
-chicken
+Chicken
+10
+kg
 2
+Rice
+25
+kg
+3
+Cooking Oil
+5
+liter
+4
+Onions
+8
+kg
+5
+Tomatoes
+6
 kg
