@@ -1,0 +1,8 @@
+1
+kaif
+chef
+40000
+2
+raza
+staff
+30000

@@ -1,0 +1,12 @@
+1
+biryani
+pakistani
+300
+2
+burger
+fast food
+500
+3
+Sandwich
+fast food
+250
