@@ -18,3 +18,31 @@ Beef Burger
 Chicken Sandwich
 2
 300
+3
+1003
+1
+800
+4
+Chicken Karahi
+1
+800
+4
+1004
+2
+750
+5
+Fries
+2
+200
+1
+Chicken Biryani
+1
+350
+5
+1005
+1
+1100
+2
+Beef Burger
+2
+550

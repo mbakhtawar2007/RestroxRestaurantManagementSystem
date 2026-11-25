@@ -1,3 +1,4 @@
+// Validated console input: every read reprompts until the input is usable.
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -7,6 +8,7 @@
 
 using namespace std;
 
+// Reads a whole number; reprompts on invalid input such as 5abc.
 int readInt(const char* message) {
     int value;
     string line;
@@ -31,6 +33,7 @@ int readInt(const char* message) {
     }
 }
 
+// Reads a decimal number; reprompts on invalid input.
 float readFloat(const char* message) {
     float value;
     string line;
@@ -54,6 +57,7 @@ float readFloat(const char* message) {
     }
 }
 
+// Reads a non-empty text line within the given size; reprompts when empty or too long.
 void readText(const char* message, char text[], int size) {
     while (true) {
         cout << message;

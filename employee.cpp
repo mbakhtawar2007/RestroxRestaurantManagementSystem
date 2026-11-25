@@ -1,3 +1,4 @@
+// Employee management: load, save, add, and view employee records.
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -12,6 +13,7 @@ const int MAX_EMPLOYEES = 100;
 Employee employees[MAX_EMPLOYEES];
 int employeeCount = 0;
 
+// Loads employee records from data/employees.txt; skips invalid rows.
 void loadEmployees() {
     ifstream file("data/employees.txt");
 
@@ -46,6 +48,7 @@ void loadEmployees() {
     file.close();
 }
 
+// Rewrites data/employees.txt from memory; returns false if the file cannot be opened.
 bool saveEmployees() {
     ofstream file("data/employees.txt");
 
@@ -64,10 +67,12 @@ bool saveEmployees() {
     return !file.fail();
 }
 
+// Returns the number of employees currently in memory.
 int getEmployeeCount() {
     return employeeCount;
 }
 
+// Adds one employee after checking for a duplicate ID and a negative salary.
 void addEmployee() {
     cout << "\n========== ADD EMPLOYEE ==========\n";
 
@@ -110,6 +115,7 @@ void addEmployee() {
     }
 }
 
+// Prints all employees in a formatted table.
 void viewEmployees() {
     cout << "\n========== EMPLOYEE RECORDS ==========\n";
 
@@ -132,6 +138,7 @@ void viewEmployees() {
     }
 }
 
+// Runs the Employee Management submenu until the user goes back.
 void employeeMenu() {
     int choice;
 

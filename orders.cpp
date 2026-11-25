@@ -1,3 +1,4 @@
+// Order management: create orders, print bills, and view order history.
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -15,6 +16,7 @@ const int MAX_ITEMS_PER_ORDER = 20;
 Order orders[MAX_ORDERS];
 int orderCount = 0;
 
+// Loads orders from data/orders.txt; rejects records with invalid item counts or amounts.
 void loadOrders() {
     ifstream file("data/orders.txt");
 
@@ -80,6 +82,7 @@ void loadOrders() {
     file.close();
 }
 
+// Rewrites data/orders.txt from memory; returns false if the file cannot be opened.
 bool saveOrders() {
     ofstream file("data/orders.txt");
 
@@ -105,10 +108,12 @@ bool saveOrders() {
     return !file.fail();
 }
 
+// Returns the number of orders currently in memory.
 int getOrderCount() {
     return orderCount;
 }
 
+// Returns total sales (the sum of all order totals).
 float getTotalSales() {
     float totalSales = 0;
 
@@ -119,6 +124,7 @@ float getTotalSales() {
     return totalSales;
 }
 
+// Creates one order: picks a customer, adds menu items, totals the bill, and saves it.
 void createOrder() {
     cout << "\n========== CREATE ORDER ==========\n";
 
@@ -240,6 +246,7 @@ void createOrder() {
     cout << "===============================================\n";
 }
 
+// Prints every order with its items and total.
 void viewOrders() {
     cout << "\n========== ALL ORDERS ==========\n";
 
@@ -269,6 +276,7 @@ void viewOrders() {
     }
 }
 
+// Runs the Order Management submenu until the user goes back.
 void orderMenu() {
     int choice;
 

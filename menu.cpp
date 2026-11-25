@@ -1,3 +1,4 @@
+// Menu management: load, save, add, view, and look up food items.
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -11,6 +12,7 @@ const int MAX_MENU_ITEMS = 100;
 MenuItem menuItems[MAX_MENU_ITEMS];
 int menuCount = 0;
 
+// Loads menu items from data/menu.txt; skips invalid rows.
 void loadMenuItems() {
     ifstream file("data/menu.txt");
 
@@ -42,6 +44,7 @@ void loadMenuItems() {
     file.close();
 }
 
+// Rewrites data/menu.txt from memory; returns false if the file cannot be opened.
 bool saveMenuItems() {
     ofstream file("data/menu.txt");
 
@@ -60,10 +63,12 @@ bool saveMenuItems() {
     return !file.fail();
 }
 
+// Returns the number of menu items currently in memory.
 int getMenuCount() {
     return menuCount;
 }
 
+// Adds one menu item after checking for a duplicate ID and a negative price.
 void addMenuItem() {
     cout << "\n========== ADD MENU ITEM ==========\n";
 
@@ -106,6 +111,7 @@ void addMenuItem() {
     }
 }
 
+// Prints the full menu in a formatted table.
 void viewMenu() {
     cout << "\n========== RESTAURANT MENU ==========\n";
 
@@ -128,6 +134,7 @@ void viewMenu() {
     }
 }
 
+// Finds a menu item by ID; returns true and fills item when found.
 bool findMenuItemByID(int id, MenuItem &item) {
     for (int i = 0; i < menuCount; i++) {
         if (menuItems[i].id == id) {
@@ -139,6 +146,7 @@ bool findMenuItemByID(int id, MenuItem &item) {
     return false;
 }
 
+// Runs the Menu Management submenu until the user goes back.
 void menuManagement() {
     int choice;
 

@@ -1,3 +1,4 @@
+// Inventory management: load, save, add, and view stock ingredients.
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -11,6 +12,7 @@ const int MAX_INGREDIENTS = 100;
 Ingredient ingredients[MAX_INGREDIENTS];
 int ingredientCount = 0;
 
+// Loads ingredients from data/inventory.txt; skips invalid rows.
 void loadInventory() {
     ifstream file("data/inventory.txt");
 
@@ -42,6 +44,7 @@ void loadInventory() {
     file.close();
 }
 
+// Rewrites data/inventory.txt from memory; returns false if the file cannot be opened.
 bool saveInventory() {
     ofstream file("data/inventory.txt");
 
@@ -60,10 +63,12 @@ bool saveInventory() {
     return !file.fail();
 }
 
+// Returns the number of ingredients currently in memory.
 int getIngredientCount() {
     return ingredientCount;
 }
 
+// Adds one ingredient after checking for a duplicate ID and a negative quantity.
 void addIngredient() {
     cout << "\n========== ADD INGREDIENT ==========\n";
 
@@ -107,6 +112,7 @@ void addIngredient() {
     }
 }
 
+// Prints all ingredients in a formatted table.
 void viewInventory() {
     cout << "\n========== INVENTORY RECORDS ==========\n";
 
@@ -129,6 +135,7 @@ void viewInventory() {
     }
 }
 
+// Runs the Inventory Management submenu until the user goes back.
 void inventoryMenu() {
     int choice;
 

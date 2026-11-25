@@ -1,3 +1,5 @@
+// RestroX - Restaurant Management System
+// Entry point: loads all saved records, then runs the main menu loop.
 #include <iostream>
 #include "input.h"
 #include "structures.h"
@@ -9,6 +11,7 @@
 
 using namespace std;
 
+// Displays summary counts and total sales for all modules.
 void showDashboard() {
     cout << "\n====================================\n";
     cout << "           RESTROX DASHBOARD        \n";
@@ -21,6 +24,7 @@ void showDashboard() {
     cout << "Total Sales     : Rs. " << getTotalSales() << '\n';
 }
 
+// Program entry point: loads saved data, shows the main menu, and routes to each module.
 int main() {
     // Load saved records before showing the main menu.
     loadEmployees();

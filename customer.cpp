@@ -1,3 +1,4 @@
+// Customer management: load, save, add, and view customer records.
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -12,6 +13,7 @@ const int MAX_CUSTOMERS = 100;
 Customer customers[MAX_CUSTOMERS];
 int customerCount = 0;
 
+// Loads customer records from data/customers.txt; skips invalid rows.
 void loadCustomers() {
     ifstream file("data/customers.txt");
 
@@ -41,6 +43,7 @@ void loadCustomers() {
     file.close();
 }
 
+// Rewrites data/customers.txt from memory; returns false if the file cannot be opened.
 bool saveCustomers() {
     ofstream file("data/customers.txt");
 
@@ -58,11 +61,13 @@ bool saveCustomers() {
     return !file.fail();
 }
 
+// Returns the number of customers currently in memory.
 int getCustomerCount() {
     return customerCount;
 }
 
 // Customer IDs start at 1001 and increase automatically.
+// Returns the next customer ID (highest saved ID + 1, starting at 1001).
 int generateCustomerID() {
     int highestID = 1000;
 
@@ -75,6 +80,7 @@ int generateCustomerID() {
     return highestID + 1;
 }
 
+// Returns the ID of the named customer, or registers a new one and returns its ID.
 int findOrAddCustomer(const char* name) {
     for (int i = 0; i < customerCount; i++) {
         if (strcmp(customers[i].name, name) == 0) {
@@ -109,6 +115,7 @@ int findOrAddCustomer(const char* name) {
     return newCustomer.id;
 }
 
+// Adds one customer by name; the ID is generated automatically.
 void addCustomer() {
     cout << "\n========== ADD CUSTOMER ==========\n";
 
@@ -118,6 +125,7 @@ void addCustomer() {
     findOrAddCustomer(name);
 }
 
+// Prints all customers in a formatted table.
 void viewCustomers() {
     cout << "\n========== CUSTOMER RECORDS ==========\n";
 
@@ -138,6 +146,7 @@ void viewCustomers() {
     }
 }
 
+// Runs the Customer Management submenu until the user goes back.
 void customerMenu() {
     int choice;
 

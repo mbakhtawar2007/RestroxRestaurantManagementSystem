@@ -14,3 +14,7 @@ Head Chef
 Raza Ahmed
 Head Chef
 70000
+5
+Ahmed Khan
+Waiter
+45000
